@@ -736,6 +736,7 @@
 }
 
 .section.started .h-title {
+  font-family: "Nunito", sans-serif;
   margin: 40px 0 0 -11vw;
   padding: 4.2vw;
   font-size: 4.2vw;
@@ -770,7 +771,7 @@
 .section.started .started-content .typed-subtitle,
 .section.started .started-content .typed-cursor {
   display: inline-block;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
   color: #68e0cf;
   font-weight: 600;
@@ -783,7 +784,7 @@
 
 .section.started .started-content .h-text {
   margin: 0 0 30px 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
 }
 
