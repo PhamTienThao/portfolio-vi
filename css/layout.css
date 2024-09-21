@@ -335,7 +335,17 @@
   display: block;
 }
 
+.btn-mycv{
+  display: none;
+}
+
 @media (max-width: 1199px) {
+  .btn-mycv{
+    display: block;
+  }
+  .btn-contact{
+    display: none;
+  }
   .header {
     padding: 0 30px;
     left: 0;
@@ -560,6 +570,12 @@
 }
 
 @media (max-width: 720px) {
+  .btn-mycv{
+    display: block;
+  }
+  .btn-contact{
+    display: none;
+  }
   .background-bg {
     height: 450px;
   }
