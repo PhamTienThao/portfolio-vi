@@ -335,12 +335,12 @@
   display: block;
 }
 
-.btn-mycv{
+.btn-mycv-vn{
   display: none;
 }
 
 @media (max-width: 1199px) {
-  .btn-mycv{
+  .btn-mycv-vn{
     display: block;
   }
   .btn-contact{
@@ -570,7 +570,7 @@
 }
 
 @media (max-width: 720px) {
-  .btn-mycv{
+  .btn-mycv-vn{
     display: block;
   }
   .btn-contact{
