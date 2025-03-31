@@ -767,6 +767,12 @@
   -moz-border-radius: 264px;
   -webkit-border-radius: 264px;
   -khtml-border-radius: 264px;
+  display: none;
+}
+@media (max-width: 1200px){
+  .section.started .h-title {
+    display: block;
+  }
 }
 
 .section.started .h-title strong {
