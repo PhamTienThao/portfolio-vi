@@ -774,6 +774,11 @@
     display: block;
   }
 }
+@media (min-width: 2100px){
+  .section.started .h-title {
+    display: block;
+  }
+}
 
 .section.started .h-title strong {
   color: #68e0cf;
