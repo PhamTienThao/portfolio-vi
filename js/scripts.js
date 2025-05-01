@@ -282,7 +282,7 @@
     // Tự động filter theo "Review" khi load trang
     $(document).ready(function () {
       // Trigger click vào radio button của "Review"
-      $('.filters input[value=".f-review"]').trigger('click');
+      $('.filters input[value=".f-viral"]').trigger('click');
 
       // Thêm class "glitch-effect" vào label của "Review"
       $('.filters label[data-text="Video"]').addClass('glitch-effect');
