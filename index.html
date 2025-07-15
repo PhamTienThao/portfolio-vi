@@ -122,6 +122,7 @@
           <div class="vertical-center">
             <!-- title -->
             <h1 class="h-title">Phạm <br />Tiến Thạo</h1>
+            
 
             <!-- content started -->
             <div class="started-content">
@@ -1641,6 +1642,7 @@
             <div class="author">tienthao</div>
           </div>
           <div class="clear"></div>
+          <div id="view-counter">Số nhà tuyển dụng đã xem: <span id="view-count">...</span></div>
         </div>
       </div>
     </div>
@@ -1696,6 +1698,22 @@
       });
     });
   </script>
+
+<script>
+  fetch("https://script.google.com/macros/s/AKfycbwsDdk5_S8AoVBTXDYocIXpYRa4KRrp4bztpEvavgl1f7b1A9rv8DiufauXyzfY0727/exec?page=portfolio")
+    .then(response => response.json())
+    .then(data => {
+      if (data.views !== undefined) {
+        document.getElementById("view-count").innerText = data.views;
+      } else {
+        document.getElementById("view-count").innerText = "Không xác định";
+      }
+    })
+    .catch(error => {
+      console.error("Lỗi khi lấy lượt truy cập:", error);
+      document.getElementById("view-count").innerText = "Lỗi kết nối";
+    });
+</script>
 
 
 </body>

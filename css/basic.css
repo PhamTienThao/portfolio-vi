@@ -846,6 +846,18 @@ blockquote {
   font-family: "Poppins";
 }
 
+ #view-counter {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 40px auto;
+    text-align: center;
+  }
+
+  #view-count {
+    font-weight: bold;
+    color: #68e0cf;
+  }
+
 /* - Animations */
 /* preloader */
 @keyframes loading {
