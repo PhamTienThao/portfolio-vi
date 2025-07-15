@@ -1700,19 +1700,17 @@
   </script>
 
 <script>
-  fetch("https://script.google.com/macros/s/AKfycbwsDdk5_S8AoVBTXDYocIXpYRa4KRrp4bztpEvavgl1f7b1A9rv8DiufauXyzfY0727/exec?page=portfolio")
-    .then(response => response.json())
-    .then(data => {
-      if (data.views !== undefined) {
-        document.getElementById("view-count").innerText = data.views;
-      } else {
-        document.getElementById("view-count").innerText = "Không xác định";
-      }
-    })
-    .catch(error => {
-      console.error("Lỗi khi lấy lượt truy cập:", error);
-      document.getElementById("view-count").innerText = "Lỗi kết nối";
-    });
+  // Gửi request ghi lượt truy cập (ẩn, không cần chờ kết quả)
+  fetch("https://script.google.com/macros/s/AKfycbwsDdk5_S8AoVBTXDYocIXpYRa4KRrp4bztpEvavgl1f7b1A9rv8DiufauXyzfY0727/exec?action=record&page=portfolio");
+
+  // Hiển thị số lượt truy cập bằng JSONP (tránh lỗi CORS)
+  function callback(data) {
+    document.getElementById("view-count").innerText = data.views;
+  }
+
+  const script = document.createElement("script");
+  script.src = "https://script.google.com/macros/s/AKfycbwsDdk5_S8AoVBTXDYocIXpYRa4KRrp4bztpEvavgl1f7b1A9rv8DiufauXyzfY0727/exec?action=count&callback=callback";
+  document.body.appendChild(script);
 </script>
 
 
