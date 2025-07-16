@@ -922,3 +922,33 @@ blockquote {
   background: #adadad;
   cursor: pointer;
 } 
+
+.chuky {
+  width: 450px;
+  margin-top: -50px;
+}
+
+@media (max-width: 550px) {
+  .chuky {
+  width: 400px;
+
+}
+}
+
+@media (max-width: 450px) {
+  .chuky {
+  width: 280px;
+}
+}
+
+@media (max-width: 400px) {
+  .chuky {
+  width: 250px;
+}
+}
+
+@media (max-width: 350px) {
+  .chuky {
+  width: 220px;
+}
+}
