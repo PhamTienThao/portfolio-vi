@@ -7,7 +7,7 @@
   <meta name="description" content="Portfolio của Phạm Tiến Thạo — Video Editor, quay phim và thiết kế sáng tạo tại TP. Hồ Chí Minh.">
   <meta property="og:title" content="Thạo — Video Editor | Portfolio">
   <meta property="og:description" content="Biến ý tưởng thành những thước phim ấn tượng, sáng tạo và giàu cảm xúc.">
-  <title>Thạo — Video Editor | Portfolio</title>
+  <title>Thạo — Video Editor | One-page Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
     </header>
 
     <main id="main-content">
-      <section class="page page-home is-active" data-page="home" aria-labelledby="home-heading">
+      <section class="page page-home is-active" id="home" data-page="home" aria-labelledby="home-heading">
         <div class="hero-layout">
           <div class="hero-copy">
             <p class="eyebrow"><span class="eyebrow-dot"></span> PORTFOLIO / 2026</p>
@@ -57,6 +57,7 @@
             <div class="badge-float badge-float-b" aria-hidden="true"><span class="mini-sound">▂▆▃█▅</span><strong>Sound Design</strong></div>
           </div>
         </div>
+        <a class="scroll-cue" href="#about" aria-label="Cuộn xuống phần Thông tin"><span class="scroll-mouse" aria-hidden="true"></span> CUỘN XUỐNG ĐỂ KHÁM PHÁ <span aria-hidden="true">↓</span></a>
         <div class="reel-band">
           <div class="reel-band-head"><span><span class="orange-square"></span> SELECTED WORKS</span><span>CREATIVE IN EVERY FRAME <span aria-hidden="true">✦</span></span></div>
           <div class="reel-grid">
@@ -68,11 +69,11 @@
         <div class="bottom-wave" aria-hidden="true"></div>
       </section>
 
-      <section class="page page-about" data-page="about" aria-labelledby="about-heading" hidden>
+      <section class="page page-about" id="about" data-page="about" aria-labelledby="about-heading">
         <div class="section-intro about-intro">
           <div class="about-text">
             <p class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE ABOUT ME</p>
-            <h1 id="about-heading">Về <em>mình</em><span class="accent-rays" aria-hidden="true">〃</span></h1>
+            <h2 id="about-heading">Về <em>mình</em><span class="accent-rays" aria-hidden="true">〃</span></h2>
             <div class="scribble-line short"></div>
             <p>Mình là Thạo, một Video Editor yêu thích kể chuyện bằng hình ảnh. Mình luôn tìm kiếm những góc nhìn sáng tạo để tạo ra những video chỉn chu, cuốn hút và mang lại cảm xúc cho người xem.</p>
             <a class="text-link" href="https://drive.google.com/file/d/1KGZvb2W6x3rt1vpJlMQLRY58Nk65aVXQ/view" rel="noopener noreferrer" target="_blank">Xem CV đầy đủ <span aria-hidden="true">↗</span></a>
@@ -102,10 +103,10 @@
         <div class="bottom-wave" aria-hidden="true"></div>
       </section>
 
-      <section class="page page-projects" data-page="projects" aria-labelledby="projects-heading" hidden>
+      <section class="page page-projects" id="projects" data-page="projects" aria-labelledby="projects-heading">
         <div class="projects-intro">
           <div><p class="eyebrow"><span class="eyebrow-dot"></span> MY CREATIVE WORK</p>
-            <h1 id="projects-heading">Dự án <em>tiêu biểu</em><span class="accent-rays" aria-hidden="true">〃</span></h1>
+            <h2 id="projects-heading">Dự án <em>tiêu biểu</em><span class="accent-rays" aria-hidden="true">〃</span></h2>
             <p class="subheading">Một số sản phẩm mình đã thực hiện — nhấn vào để xem video.</p>
           </div>
           <div class="projects-stamp" aria-hidden="true">✳<br><small>WORK / 2026</small></div>
@@ -122,9 +123,9 @@
         <div class="bottom-wave" aria-hidden="true"></div>
       </section>
 
-      <section class="page page-contact" data-page="contact" aria-labelledby="contact-heading" hidden>
+      <section class="page page-contact" id="contact" data-page="contact" aria-labelledby="contact-heading">
         <div class="contact-intro">
-          <div class="contact-heading-wrap"><p class="eyebrow"><span class="eyebrow-dot"></span> LET'S CREATE TOGETHER</p><h1 id="contact-heading">Liên hệ<br><em>với mình</em><span class="accent-rays" aria-hidden="true">〃</span></h1>
+          <div class="contact-heading-wrap"><p class="eyebrow"><span class="eyebrow-dot"></span> LET'S CREATE TOGETHER</p><h2 id="contact-heading">Liên hệ<br><em>với mình</em><span class="accent-rays" aria-hidden="true">〃</span></h2>
             <p>Bạn có ý tưởng, dự án hoặc muốn hợp tác sản xuất video? Hãy liên hệ với mình nhé!</p>
           </div>
           <div class="contact-illustration"><div class="contact-disc"></div><img src="assets/contact-character.png" class="character character-contact" alt="Nhân vật hoạt hình 3D mặc áo cam, đeo tai nghe và giơ ngón cái" width="262" height="268"></div>
@@ -140,6 +141,7 @@
         <div class="bottom-wave" aria-hidden="true"></div>
       </section>
     </main>
+    <a class="back-to-top" href="#home" aria-label="Quay lên đầu trang" title="Lên đầu trang">↑</a>
     <footer class="site-footer"><span>© 2026 Phạm Tiến Thạo</span><span>MADE WITH <b>♥</b> &amp; MOTION</span></footer>
   </div>
   <dialog id="video-dialog" class="video-dialog" aria-label="Xem video dự án"><button type="button" class="close-dialog" id="video-close" aria-label="Đóng video">×</button><div id="video-stage" class="video-stage"></div><p id="video-caption"></p></dialog>
