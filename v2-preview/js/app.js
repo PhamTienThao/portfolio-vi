@@ -18,24 +18,48 @@ const projects=[
   {title:'Bộ ảnh — Hoàng hôn',type:'design',label:'BỘ SƯU TẬP',image:'images/Gallery/5/thumb-5.webp',imageOnly:true}
 ];
 const escapeHTML=str=>String(str).replace(/[&<>"']/g,character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
-const routeNames=['home','about','projects','contact'];
-const navLinks=[...document.querySelectorAll('[data-route]')];
+// One-page navigation: all four sections are visible and scroll vertically.
+const sectionIds=['home','about','projects','contact'];
+const navLinks=[...document.querySelectorAll('.nav-link[data-route]')];
 const nav=document.getElementById('main-nav');
 const toggle=document.getElementById('menu-toggle');
-const pages=[...document.querySelectorAll('.page')];
-function route(){
- const slug=location.hash.slice(1);
- const current=routeNames.includes(slug)?slug:'home';
- pages.forEach(p=>{const active=p.dataset.page===current;p.hidden=!active;p.classList.toggle('is-active',active)});
- navLinks.forEach(a=>{if(!a.classList.contains('nav-link'))return;const active=a.dataset.route===current;a.classList.toggle('is-current',active);if(active){a.setAttribute('aria-current','page')}else{a.removeAttribute('aria-current')}});
- nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Mở menu');
- document.title=`${({home:'Trang chủ',about:'Thông tin',projects:'Dự án',contact:'Liên hệ'})[current]} | Thạo Video Editor`;
- window.scrollTo({top:0,left:0,behavior:'instant'});
+const header=document.querySelector('.site-header');
+const backToTop=document.querySelector('.back-to-top');
+const sections=sectionIds.map(id=>document.getElementById(id));
+function markActive(id){
+ navLinks.forEach(link=>{
+  const active=link.dataset.route===id;
+  link.classList.toggle('is-current',active);
+  if(active)link.setAttribute('aria-current','location');
+  else link.removeAttribute('aria-current');
+ });
 }
-toggle.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Đóng menu':'Mở menu')});
-document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!toggle.contains(e.target)){nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')}});
-window.addEventListener('hashchange',route);
-route();
+function closeMenu(){nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Mở menu')}
+toggle.addEventListener('click',()=>{
+ const isOpen=nav.classList.toggle('is-open');
+ toggle.setAttribute('aria-expanded',String(isOpen));
+ toggle.setAttribute('aria-label',isOpen?'Đóng menu':'Mở menu');
+});
+document.addEventListener('click',event=>{if(!nav.contains(event.target)&&!toggle.contains(event.target))closeMenu()});
+navLinks.forEach(link=>link.addEventListener('click',()=>{markActive(link.dataset.route);closeMenu()}));
+function updateScrollState(){
+ const focusY=header.getBoundingClientRect().height+Math.min(window.innerHeight*.2,180);
+ let active='home';
+ sections.forEach(section=>{if(section.getBoundingClientRect().top<=focusY)active=section.id});
+ markActive(active);
+ const scrollable=document.documentElement.scrollHeight-window.innerHeight;
+ header.style.setProperty('--scroll-progress',scrollable>0?String(Math.min(1,Math.max(0,window.scrollY/scrollable))):'0');
+ backToTop.classList.toggle('is-visible',window.scrollY>450);
+}
+let scrollTicking=false;
+window.addEventListener('scroll',()=>{
+ if(scrollTicking)return;
+ scrollTicking=true;
+ requestAnimationFrame(()=>{updateScrollState();scrollTicking=false});
+},{passive:true});
+window.addEventListener('resize',updateScrollState,{passive:true});
+window.addEventListener('hashchange',()=>{closeMenu();requestAnimationFrame(updateScrollState)});
+updateScrollState();
 
 const grid=document.getElementById('project-grid');
 function drawProjects(filter='all'){
