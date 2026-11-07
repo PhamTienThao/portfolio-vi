@@ -1,36 +1,28 @@
-# Thạo Video Editor — bản xem thử giao diện 2.0
+# Thạo Video Editor — Portfolio 2.0 (One-page)
 
-## Đây là gì?
+Bản xem thử theo ảnh tham chiếu phong cách đen–cam. **Tất cả 4 khu vực Trang chủ → Thông tin → Dự án → Liên hệ cùng nằm trong một trang cuộn dọc**, không còn chuyển trang ẩn/hiện.
 
-Bản giao diện thử nghiệm HTML / CSS / JavaScript xây dựng theo ảnh mẫu 4 trang người dùng cung cấp. Chưa sửa hoặc triển khai vào repository GitHub gốc. Nội dung được đối chiếu với mã nguồn công khai `PhamTienThao/portfolio-vi`.
+## Cách xem
 
-## Xem thử
+Mở `index.html` bằng trình duyệt. Để xem ổn định nên dùng server tĩnh (VS Code Live Server hoặc `python -m http.server 8080`). Truy cập `http://localhost:8080`.
 
-Mở `index.html` bằng trình duyệt. Nên dùng Live Server hoặc một máy chủ tĩnh vì đây là sản phẩm web; ví dụ Python: `python -m http.server 8080`, mở `http://localhost:8080`.
+- Cuộn xuống tự nhiên để đọc các phần liên tiếp.
+- Nhấn menu hoặc nút `Xem dự án` để cuộn mượt tới phần tương ứng (`#home`, `#about`, `#projects`, `#contact`).
+- Menu luôn cố định tại đầu trang khi cuộn và tự đánh dấu mục đang xem.
+- Có thanh thể hiện tiến độ cuộn, nút `↑` trở lại đầu trang.
+- Trên điện thoại: menu thu gọn, hiển thị responsive.
+- Bộ lọc video và cửa sổ xem video vẫn hoạt động.
 
-Có bốn khu vực điều hướng theo hash: `#home`, `#about`, `#projects`, `#contact`. Responsive cho điện thoại, tablet và desktop. Bộ lọc dự án dùng video thật, bấm vào thumbnail sẽ mở YouTube nhúng. Dùng phím Esc hoặc nút × để đóng.
+## Giới hạn bản demo
 
-## Những gì đã làm
-
-- Thay giao diện tối/cam, navbar 4 trang, typography lớn, các thẻ bo góc, chuyển động nhẹ.
-- Ba ảnh nhân vật được trích và xử lý từ **ảnh tham chiếu người dùng cung cấp** để dựng demo. Đây là hình cắt từ mockup, chưa phải tài nguyên 3D độc lập chất lượng gốc; khi triển khai chính thức nên thay bằng file PNG/WebP nhân vật riêng nền trong suốt, độ phân giải cao.
-- Sử dụng các dự án và link YouTube thật lấy từ `index.html` công khai của website hiện tại. 13 ví dụ; **chưa chuyển toàn bộ** thư viện.
-- Sử dụng địa chỉ email, điện thoại, Facebook và đường dẫn CV trên website hiện tại.
-- Bấm nút xem video: popup YouTube. Bộ lọc dự án hoạt động. Contact form demo mở ứng dụng mail, **không tự động gửi** như hệ thống Web3Forms hiện tại.
-
-## Lưu ý trước khi triển khai chính thức
-
-1. Sao lưu toàn bộ mã nguồn GitHub cũ và bản đang chạy.
-2. Đối chiếu / import đầy đủ dữ liệu video, ảnh, gallery và metadata từ repo gốc.
-3. Video thumbnail hiện lấy từ `https://phamtienthao.site/images/...`, vì vậy cần Internet và website cũ còn trực tuyến. Khi thay website chính, cần chuyển thư mục `images/` tương ứng vào bản mới hoặc cập nhật BASE trong `js/app.js`. Lý tưởng là sao chép đúng các ảnh assets để dùng URL nội bộ.
-4. Gắn lại và kiểm tra biểu mẫu gửi email của phiên bản gốc, nhưng không tự chép các khóa dịch vụ từ mã nguồn công khai.
-5. Kiểm thử responsive, SEO, Google Search Console, các đường dẫn và tính năng trên hosting trước khi triển khai vào domain thật.
+- 13 dự án mẫu trích từ website hiện tại, **chưa chuyển toàn bộ** thư viện ảnh/video.
+- Hình 3D được trích từ mockup tham chiếu, cần thay bằng file nhân vật độc lập chất lượng cao ở bản sản xuất.
+- Thumbnail dự án đang tải từ `https://phamtienthao.site/images/...`, nên cần Internet và website hiện hành còn truy cập được.
+- Form liên hệ **chỉ mở ứng dụng email** và không gửi tự động. Chưa tích hợp dịch vụ Web3Forms gốc.
+- Chưa triển khai website hiện tại; nên kiểm thử đầy đủ trước khi dùng trên domain thật.
 
 ## Cấu trúc
 
-- `index.html`: 4 trang / navigation
-- `css/style.css`: giao diện và responsive
-- `js/app.js`: routes, dữ liệu demo dự án, lọc, mở video, contact mailto
-- `assets/`: hình nhân vật cắt từ mockup người dùng cung cấp
+`index.html` — 4 section của one-page. `css/style.css` — phong cách và responsive. `js/app.js` — theo dõi cuộn, điều hướng, dự án, popup video, mailto. `assets/` — hình nhân vật cắt từ mockup.
 
-Không có token, mật khẩu hoặc API key bí mật nào được thêm vào sản phẩm.
+Không có token, mật khẩu hoặc API key bí mật trong bản demo.
